@@ -1,0 +1,15 @@
+syntax = "proto3";
+package v1;
+option go_package = "./v1";
+
+import "google/api/annotations.proto";
+import "hello_message.proto";
+
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+  rpc HelloGetById(HelloById) returns (HelloResponseById){
+    option (google.api.http) = {
+        get : "/v1/hello/{id}"
+    };
+  }
+} 

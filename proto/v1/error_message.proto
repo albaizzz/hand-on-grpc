@@ -1,0 +1,8 @@
+syntax = "proto3";
+package v1;
+option go_package = "./v1";
+
+message ErrorResponse {
+    string message = 1;
+    int32 code = 2;
+}

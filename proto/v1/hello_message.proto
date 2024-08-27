@@ -1,0 +1,30 @@
+syntax = "proto3";
+package v1;
+option go_package = "./v1";
+import "error_message.proto";
+
+message HelloRequest {
+    string name = 1;
+    string description = 2;
+    int32 id = 3;
+}
+
+message HelloById {
+    int32 id=1;
+}
+
+message HelloResponseById {
+    string name = 1;
+    string description = 2;
+    int32 id = 3;
+}
+  
+message HelloResponse {
+    string processedMessage = 1;
+}
+
+message HelloResponseError {
+    string processedMessage = 1;
+    ErrorResponse error = 2;
+}
+  
